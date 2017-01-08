@@ -38,13 +38,9 @@ If you like this plugin, could you buy me a coffee? :)
 	13-Nov-2016 0.2 Code Cleanup
 	13-Nov-2016 0.1 Init Release
 
---------------------------------------------------------------------
+这个插件永远不会放其它链接或者其它的信息！ 这个插件是完全离线的 (qrcode.min.js)！可以点生成的QR图片来修改文本内容。
 
-这个插件永远不会放其它链接或者其它的信息！
-
-这个插件是完全离线的 (qrcode.min.js)！可以点生成的QR图片来修改文本内容。
-
-鼓励一下我吧，给我评个分，留个言。:)
+鼓励一下我吧，给我评个分，留个言
 
 - **离线和快速**
 - **可以配置是否添加到右键菜单中**
@@ -54,18 +50,6 @@ If you like this plugin, could you buy me a coffee? :)
 - **使用方便***
 - **允许QR修改(点击QR图片)**
 - **没有作者链接或其他shits **
-
-## Contact me via 联系我
-	https://helloacm.com/out/email
-	https://justyy.com 
-	https://weibomiaopai.com 
-	https://uploadbeta.com 
-	https://rot47.net 
-	https://codingforspeed.com 
-	https://zhihua-lai.com 
-	https://steakovercooked.com 
-	https://happyukgo.com 
-	https://isvbscriptdead.com
 
 如果您喜欢这个工具，请支持我一下，请我喝咔啡
 - https://www.paypal.me/doctorlai/5
