@@ -1,12 +1,12 @@
 # simple-qr-code
 Simple QR Code Offline (No Ads, No Author Links)
-**Absolutely Offline and Fast**
-**Context Menu Support (Any Selected Text to QR)**
-**Absolutely simple, powerful and Ads-Free!**
-**Life-time support, Free For Ever**
-**Easy to use***
-**Allow QR Modification (Click the Image)**
-**No Author links or other shits**
+- **Absolutely Offline and Fast**
+- **Context Menu Support (Any Selected Text to QR)**
+- **Absolutely simple, powerful and Ads-Free!**
+- **Life-time support, Free For Ever**
+- **Easy to use***
+- **Allow QR Modification (Click the Image)**
+- **No Author links or other shits**
 
 This Simple Chrome Extension (Clean UI with no Author or other links) allows you to get the QR image for the current Tab URL. You click the extension icon and then you will get the QR image. Simple as that, no deep shit.
 
@@ -23,10 +23,10 @@ Just remember, less is more. Please rate it. Suggestions, Feedback and ratings a
 You can also click the QR image to modify the text.
 
 If you like this plugin, could you buy me a coffee? :)
- 	https://www.paypal.me/doctorlai/5
- 	bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ
+- https://www.paypal.me/doctorlai/5
+- bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ
 
-Update History
+## Update History
 	17-Nov-2016 1.0 Fix Multiple Context Menu
 	16-Nov-2016 0.9 Add Options Page - Allow Hiding the Context Menu
 	16-Nov-2016 0.8 Add Context Menu - Get QR of Current URL
@@ -46,16 +46,16 @@ Update History
 
 鼓励一下我吧，给我评个分，留个言。:)
 
-**离线和快速**
-**可以配置是否添加到右键菜单中**
-**终身免费 终身维护**
-**鼠标右键 把选择的文本转换成QR**
-**绝对简单，无广告！**
-**使用方便***
-**允许QR修改(点击QR图片)**
-**没有作者链接或其他shits **
+- **离线和快速**
+- **可以配置是否添加到右键菜单中**
+- **终身免费 终身维护**
+- **鼠标右键 把选择的文本转换成QR**
+- **绝对简单，无广告！**
+- **使用方便***
+- **允许QR修改(点击QR图片)**
+- **没有作者链接或其他shits **
 
-Contact me via 联系我
+## Contact me via 联系我
 	https://helloacm.com/out/email
 	https://justyy.com 
 	https://weibomiaopai.com 
@@ -68,8 +68,8 @@ Contact me via 联系我
 	https://isvbscriptdead.com
 
 如果您喜欢这个工具，请支持我一下，请我喝咔啡
- 	https://www.paypal.me/doctorlai/5
- 	bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ	
+- https://www.paypal.me/doctorlai/5
+- bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ	
   
 # The Extension URL on Chrome Web Store
 https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado
