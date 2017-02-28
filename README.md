@@ -27,6 +27,7 @@ If you like this plugin, could you buy me a coffee? :)
 - bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ
 
 ## Update History
+	28-JAN-2017 1.1 Add Locale
 	17-Nov-2016 1.0 Fix Multiple Context Menu
 	16-Nov-2016 0.9 Add Options Page - Allow Hiding the Context Menu
 	16-Nov-2016 0.8 Add Context Menu - Get QR of Current URL
@@ -52,11 +53,11 @@ If you like this plugin, could you buy me a coffee? :)
 - **没有作者链接或其他shits **
 
 如果您喜欢这个工具，请支持我一下，请我喝咔啡
-- https://www.paypal.me/doctorlai/5
+- https://www.paypal.me/doctorlai/3
 - bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ	
   
-# The Extension URL on Chrome Web Store
+# The Extension URL on Chrome Web Store 
 https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado
 
-# Other Online Tools
+# Other Online Tools 其它在线工具
 https://helloacm.com/tools/
