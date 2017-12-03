@@ -1,14 +1,11 @@
-# simple-qr-code
-Simple QR Code Offline (No Ads, No Author Links)
+# Chrome Extension: Offline QR Code Generator/Editor
 - **Absolutely Offline and Fast**
 - **Context Menu Support (Any Selected Text to QR)**
 - **Absolutely simple, powerful and Ads-Free!**
-- **Life-time support, Free For Ever**
 - **Easy to use***
 - **Allow QR Modification (Click the Image)**
-- **No Author links or other shits**
 
-This Simple Chrome Extension (Clean UI with no Author or other links) allows you to get the QR image for the current Tab URL. You click the extension icon and then you will get the QR image. Simple as that, no deep shit.
+This Simple Chrome Extension (Clean UI with no Author or other links) allows you to get the QR image for the current Tab URL. You click the extension icon and then you will get the QR image. 
 
 You can right click to copy, open in new tab or save the image. This plugin requires No Internet Connection (via qrcode.min.js)
 
@@ -32,12 +29,10 @@ If you like this plugin, could you buy me a coffee? :)
 
 - **离线和快速**
 - **可以配置是否添加到右键菜单中**
-- **终身免费 终身维护**
 - **鼠标右键 把选择的文本转换成QR**
 - **绝对简单，无广告！**
 - **使用方便***
 - **允许QR修改(点击QR图片)**
-- **没有作者链接或其他shits **
 
 如果您喜欢这个工具，请支持我一下，请我喝咔啡
 - https://www.paypal.me/doctorlai/3
@@ -48,6 +43,8 @@ https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcb
 
 # Other Online Tools 其它在线工具
 https://helloacm.com/tools/
+https://helloacm.com/how-to-generate-qr-image-using-google-api/
 
 # Author
 [@justyy](https://steemit.com/@justyy)
+Utopian Post: https://utopian.io/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
