@@ -23,21 +23,8 @@ Just remember, less is more. Please rate it. Suggestions, Feedback and ratings a
 You can also click the QR image to modify the text.
 
 If you like this plugin, could you buy me a coffee? :)
-- https://www.paypal.me/doctorlai/5
+- https://www.paypal.me/doctorlai/3
 - bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ
-
-## Update History
-	28-JAN-2017 1.1 Add Locale
-	17-Nov-2016 1.0 Fix Multiple Context Menu
-	16-Nov-2016 0.9 Add Options Page - Allow Hiding the Context Menu
-	16-Nov-2016 0.8 Add Context Menu - Get QR of Current URL
-	16-Nov-2016 0.7 Allow Modification when you click the QR image (in page)
-	16-Nov-2016 0.6 Remove Modal because of Conflicts
-	15-Nov-2016 0.5 Add Context Menu (Any Selected Text to QR)
-	13-Nov-2016 0.4 Update Text after QR is modified
-	13-Nov-2016 0.3 Offline using qrcode.min.js
-	13-Nov-2016 0.2 Code Cleanup
-	13-Nov-2016 0.1 Init Release
 
 这个插件永远不会放其它链接或者其它的信息！ 这个插件是完全离线的 (qrcode.min.js)！可以点生成的QR图片来修改文本内容。
 
