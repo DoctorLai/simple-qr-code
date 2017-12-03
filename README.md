@@ -42,10 +42,9 @@ If you like this plugin, could you buy me a coffee? :)
 https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado
 
 # Other Online Tools 其它在线工具
-https://helloacm.com/tools/
-https://helloacm.com/how-to-generate-qr-image-using-google-api/
+- https://helloacm.com/tools/
+- https://helloacm.com/how-to-generate-qr-image-using-google-api/
 
 # Author
-[@justyy](https://steemit.com/@justyy)
-
-Utopian Post: https://utopian.io/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
+- [@justyy](https://steemit.com/@justyy)
+- Utopian Post: https://utopian.io/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
