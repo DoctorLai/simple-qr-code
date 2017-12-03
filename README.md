@@ -1,9 +1,9 @@
 # Chrome Extension: Offline QR Code Generator/Editor
-- **Absolutely Offline and Fast**
-- **Context Menu Support (Any Selected Text to QR)**
-- **Absolutely simple, powerful and Ads-Free!**
-- **Easy to use***
-- **Allow QR Modification (Click the Image)**
+- Absolutely Offline and Fast
+- Context Menu Support (Any Selected Text to QR)
+- Absolutely simple, powerful and Ads-Free
+- Easy to use
+- Allow QR Modification (Click the Image)
 
 This Simple Chrome Extension (Clean UI with no Author or other links) allows you to get the QR image for the current Tab URL. You click the extension icon and then you will get the QR image. 
 
@@ -47,4 +47,5 @@ https://helloacm.com/how-to-generate-qr-image-using-google-api/
 
 # Author
 [@justyy](https://steemit.com/@justyy)
+
 Utopian Post: https://utopian.io/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
