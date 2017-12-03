@@ -48,3 +48,6 @@ https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcb
 
 # Other Online Tools 其它在线工具
 https://helloacm.com/tools/
+
+# Author
+[@justyy](https://steemit.com/@justyy)
