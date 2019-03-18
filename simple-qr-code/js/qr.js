@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   chrome.tabs.getSelected(null, function(tab) {  
+		var manifest = chrome.runtime.getManifest();    
+		var app_name = manifest.name + " v" + manifest.version;
+		$('div#output2').html(app_name);
     var url = tab.url;
     //var img = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=" + encodeURIComponent(url);
     $('div#output').html(url);

@@ -90,8 +90,8 @@ function showQR(txt) {
 	dragElement(document.getElementById("weibomiaopaiqrcode"));
 
 	$(document).on('click', function(event) {
-		if (!$(event.target).closest('div#weibomiaopaiqrdiv').length) {
-			var weibomiaopaiqrdiv = document.getElementById('weibomiaopaiqrdiv');
+		var weibomiaopaiqrdiv = document.getElementById('weibomiaopaiqrdiv');
+		if (!$(event.target).closest('div#weibomiaopaiqrdiv').length) {			
 			if (weibomiaopaiqrdiv != null) {
 				document.body.removeChild(weibomiaopaiqrdiv);
 			}
@@ -103,11 +103,10 @@ function showQR(txt) {
 			}							
 			var msg = prompt("Any Text to QR", curTxt);
 			if (msg.length > 0 && curTxt != msg) {				
-				var weibomiaopaiqrdiv = document.getElementById('weibomiaopaiqrdiv');
 				if (weibomiaopaiqrdiv != null) {
 					document.body.removeChild(weibomiaopaiqrdiv);
 				}				
-				var div = "<div style='z-index:999999;position:fixed;top:20%;left:30%' id=weibomiaopaiqrcode></div>";
+				var div = "<div style='z-index:999999;position:fixed;top:20%;left:30%;padding:30px;background:white' id=weibomiaopaiqrcode></div>";
 				var d = document.createElement("div");
 				d.setAttribute("id", "weibomiaopaiqrdiv");
 				d.innerHTML = div;
@@ -115,7 +114,8 @@ function showQR(txt) {
 				var qrcode = new QRCode(document.getElementById("weibomiaopaiqrcode"), {
 				    text: msg,
 				    width: 250,
-				    height: 250,
+						height: 250,
+						padding: 120,
 				    colorDark : "#000000",
 				    colorLight : "#ffffff",
 				    correctLevel : QRCode.CorrectLevel.H
