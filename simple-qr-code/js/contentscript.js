@@ -32,7 +32,7 @@ function showQR(txt) {
 			  "</div>";
 	*/
 	// <div id=weibomiaopaimodaldialogoutput style='word-wrap:break-word;width:250px;text-align:center'></div>
-	var div = "<div style='z-index:999999;position:absolute;top:20%;left:30%' id=weibomiaopaiqrcode></div>";
+	var div = "<div style='z-index:999999;position:absolute;top:20%;left:30%;padding:30px;background:white' id=weibomiaopaiqrcode></div>";
 	var d = document.createElement("div");
 	d.setAttribute("id", "weibomiaopaiqrdiv");
 	d.innerHTML = div;
@@ -40,7 +40,8 @@ function showQR(txt) {
 	var qrcode = new QRCode(document.getElementById("weibomiaopaiqrcode"), {
 	    text: txt,
 	    width: 250,
-	    height: 250,
+			height: 250,
+			padding: 120,
 	    colorDark : "#000000",
 	    colorLight : "#ffffff",
 	    correctLevel : QRCode.CorrectLevel.H
