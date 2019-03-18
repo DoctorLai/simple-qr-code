@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	$('div#qrcode').click(function() {
 		var msg = prompt("Any Text to QR", url);
-		if (msg.length > 0 && msg != url) {
+		if ((msg != null) && (msg.length > 0) && (msg != url)) {
 			qrcode.clear();
 			qrcode.makeCode(msg);
 			$('div#output').html(msg);
