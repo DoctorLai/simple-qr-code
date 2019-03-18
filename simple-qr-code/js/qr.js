@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	    width: 250,
 	    height: 250,
 	    colorDark : "#000000",
-	    colorLight : "#ffffff",
+			colorLight : "#ffffff",
+			padding: 120,
 	    correctLevel : QRCode.CorrectLevel.H
 	});
 	$('div#qrcode').click(function() {
