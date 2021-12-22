@@ -27,4 +27,4 @@ If you like this plugin, could you buy me a coffee? :)
 
 # Author
 - [@justyy](https://steemit.com/@justyy)
-- Utopian Post: https://utopian.io/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
+- Utopian Post: https://steemit.com/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
