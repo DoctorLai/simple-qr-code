@@ -1,10 +1,10 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Offline QR Code Generator/Editor",
   "default_locale": "en",
   "short_name": "QR Code Generator",  
-  "version": "1.3.2",
-  "browser_action": {
+  "version": "1.3.3",
+  "action": {
      "default_icon": "icon.png",
      "default_title": "Offline QR Code Generator/Editor (URL and Text)",
      "default_popup": "main.html"
@@ -19,19 +19,18 @@
   },  
   "update_url":"http://clients2.google.com/service/update2/crx",
   "description": "Offline QR Code Generator/Editor (URL and Text)",
-  "web_accessible_resources": [
-  		"js/*", 
-  		"images/*"
-  ],
+  "web_accessible_resources": [{
+  		"resources": ["js/*", "images/*"],
+      "extension_ids": ["kfhbhjigpkcbpmknfomdobahejfajado"]
+  }],
   "options_page": "options.html",
   "permissions": [
      "activeTab",
      "storage",
-     "tabs",
      "contextMenus"
   ],
   "background": {
-    "page": "background.html"
+    "service_worker": "js/context.js"
   },
   "content_scripts": [{
       "matches": ["<all_urls>"],

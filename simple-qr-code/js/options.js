@@ -4,6 +4,7 @@ function setAction(hide) {
   chrome.contextMenus.removeAll();
   if (!hide) {
     chrome.contextMenus.create({
+      id: "justyyuk-offline-qr-code",
       title: "Get QR for Selected Text or Tab URL",
       contexts:["all"],
     });   

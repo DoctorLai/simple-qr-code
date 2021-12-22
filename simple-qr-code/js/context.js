@@ -1,3 +1,4 @@
+/*
 chrome.contextMenus.removeAll();
 
 chrome.storage.sync.get('hidemenu', function(data) {
@@ -11,7 +12,7 @@ chrome.storage.sync.get('hidemenu', function(data) {
   }
 });  
 
-chrome.contextMenus.onClicked.addListener(function (info, tab) {
+chrome.action.onClicked.addListener(function (info, tab) {
 	var txt = tab.url;
 	if (info.selectionText && info.selectionText.length > 0) {
 	   txt = info.selectionText;
@@ -30,3 +31,4 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 		});	
 	}
 });
+*/
