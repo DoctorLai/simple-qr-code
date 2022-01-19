@@ -14,17 +14,9 @@ If you don't like context menu, you can hide it in the option page. You can also
 
 If you like this plugin, could you buy me a coffee? :)
 - https://www.paypal.me/doctorlai/3
-- bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ
-
-# Support this Plugin
-- https://www.paypal.me/doctorlai/3
-- bitcoin:1J88t5UAgKBHhMgzkyH9bpY5mPdCYAe5XQ	
+- buy me a coffee: https://justyy.com/out/bmc
   
 # Resources
 - https://helloacm.com/tools/
 - https://helloacm.com/how-to-generate-qr-image-using-google-api/
 - https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado
-
-# Author
-- [@justyy](https://steemit.com/@justyy)
-- Utopian Post: https://steemit.com/utopian-io/@justyy/chrome-extension-offline-qr-code-generator-editor
