@@ -3,8 +3,16 @@
     "message": "Offline QR Code Generator/Editor",
     "description": "Offline QR Code Generator/Editor https://helloacm.com/tools/"
   },
+  "appShortName": {
+    "message": "QR Generator",
+    "description": "Short extension name shown by Chrome"
+  },
   "appDesc": {
-    "message": "Offline QR Code Generator/Editor",
-    "description": "Offline QR Code Generator/Editor https://helloacm.com/tools/"
+    "message": "Offline QR Code Generator/Editor (URL and Text)",
+    "description": "Extension description shown by Chrome"
+  },
+  "appTitle": {
+    "message": "Offline QR Code Generator/Editor (URL and Text)",
+    "description": "Toolbar title shown by Chrome"
   }
 }

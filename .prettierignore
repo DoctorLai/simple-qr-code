@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+package-lock.json
+
+# Third-party / minified bundles
+simple-qr-code/js/jquery.js
+simple-qr-code/js/qrcode.min.js
+**/*.min.js

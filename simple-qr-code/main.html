@@ -1,17 +1,138 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-  	<meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Simple QR Code Offline</title>
-    <meta name="author" content="https://weibomiaopai.com">
+    <meta name="author" content="https://weibomiaopai.com" />
+    <style>
+      :root {
+        color-scheme: light;
+        --accent: #1769aa;
+        --accent-hover: #0f548c;
+        --border: #d8dee6;
+        --muted: #617084;
+        --panel: #f7f9fc;
+        --text: #1c2430;
+      }
+
+      body {
+        box-sizing: border-box;
+        min-width: 316px;
+        margin: 0;
+        padding: 14px;
+        color: var(--text);
+        font-family:
+          ui-sans-serif, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #fff;
+      }
+
+      #output {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+      }
+
+      label {
+        display: block;
+        margin: 0 0 6px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      #qr-text {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 72px;
+        resize: vertical;
+        padding: 8px;
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font:
+          13px/1.4 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          "Liberation Mono",
+          monospace;
+      }
+
+      #qr-text:focus {
+        border-color: var(--accent);
+        outline: 2px solid rgba(23, 105, 170, 0.16);
+      }
+
+      #qrcode {
+        width: 250px;
+        min-height: 250px;
+        margin: 12px auto;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      #output2 {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      button {
+        min-height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        background: var(--accent);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: var(--accent-hover);
+      }
+
+      button.secondary {
+        color: var(--text);
+        background: #eef3f8;
+        border: 1px solid var(--border);
+      }
+
+      button.secondary:hover {
+        background: #e2ebf4;
+      }
+    </style>
     <script src="js/jquery.js"></script>
     <script src="js/qrcode.min.js"></script>
+    <script src="js/lib/qrutils.js"></script>
     <script src="js/qr.js"></script>
   </head>
   <body>
-    <div id=output style='word-wrap:break-word;width:250px'></div>
-    <BR/>
-    <div id="qrcode" style='padding:30px'></div>
-    <div id=output2 style='word-wrap:break-word;width:250px'></div>
+    <div id="output"></div>
+    <label for="qr-text">QR text</label>
+    <textarea id="qr-text" spellcheck="false"></textarea>
+    <div id="qrcode"></div>
+    <div class="actions">
+      <button id="generate" type="button">Update QR</button>
+      <button id="download" type="button">Download PNG</button>
+      <button id="copy-text" class="secondary" type="button">Copy text</button>
+      <button id="reset" class="secondary" type="button">Reset URL</button>
+    </div>
+    <div id="output2"></div>
   </body>
 </html>
