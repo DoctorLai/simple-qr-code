@@ -1,1 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
 *.zip
+
+# Test & coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.idea/
+*.swp

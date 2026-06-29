@@ -1,34 +1,42 @@
-/*
-chrome.contextMenus.removeAll();
+/**
+ * Background service worker (Manifest V3).
+ *
+ * Re-creates the "Get QR for Selected Text or Tab URL" context-menu item and,
+ * when it is clicked, asks the content script on the active tab to render a QR
+ * code for the selected text (or the tab URL when nothing is selected).
+ */
+importScripts("lib/qrutils.js");
 
-chrome.storage.sync.get('hidemenu', function(data) {
-  var hidemenu = data.hidemenu;
-  chrome.contextMenus.removeAll();
-  if (!hidemenu) {
-	chrome.contextMenus.create({
-		title: "Get QR for Selected Text or Tab URL",
-		contexts:["all"],
-	});    	
+var MENU_ID = "justyyuk-offline-qr-code";
+var MENU_TITLE = "Get QR for Selected Text or Tab URL";
+
+function buildContextMenu() {
+  chrome.contextMenus.removeAll(function () {
+    chrome.storage.sync.get("hidemenu", function (data) {
+      if (!data || !data.hidemenu) {
+        chrome.contextMenus.create({
+          id: MENU_ID,
+          title: MENU_TITLE,
+          contexts: ["all"],
+        });
+      }
+    });
+  });
+}
+
+// Context menus must be (re)created on install and on browser startup.
+chrome.runtime.onInstalled.addListener(buildContextMenu);
+chrome.runtime.onStartup.addListener(buildContextMenu);
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId !== MENU_ID) {
+    return;
   }
-});  
-
-chrome.action.onClicked.addListener(function (info, tab) {
-	var txt = tab.url;
-	if (info.selectionText && info.selectionText.length > 0) {
-	   txt = info.selectionText;
-	}
-	if (txt.length) {
-		chrome.tabs.query({
-			active: true, 
-			currentWindow: true
-		}, function(tabs) {
-			chrome.tabs.sendMessage(tabs[0].id, {
-				type: "weibomiaopaiopenqrmodal",
-				text: txt
-			}, function(res) {
-				// response
-			});
-		});	
-	}
+  var txt = self.QRUtils.pickQrText(info, tab);
+  if (txt && txt.length > 0 && tab && tab.id != null) {
+    chrome.tabs.sendMessage(tab.id, {
+      type: "weibomiaopaiopenqrmodal",
+      text: txt,
+    });
+  }
 });
-*/

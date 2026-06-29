@@ -1,10 +1,18 @@
 {
   "appName": {
-    "message": "离线二维码生成编辑利器 Offline QR Code Generator/Editor",
-    "description": "离线二维码生成编辑利器 Offline QR Code Generator/Editor https://helloacm.com/tools/"
+    "message": "\u79bb\u7ebf\u4e8c\u7ef4\u7801\u751f\u6210/\u7f16\u8f91\u5668",
+    "description": "Offline QR Code Generator/Editor https://helloacm.com/tools/"
+  },
+  "appShortName": {
+    "message": "\u4e8c\u7ef4\u7801\u751f\u6210\u5668",
+    "description": "Short extension name shown by Chrome"
   },
   "appDesc": {
-    "message": "离线二维码生成编辑利器 Offline QR Code Generator/Editor",
-    "description": "离线二维码生成编辑利器 Offline QR Code Generator/Editor https://helloacm.com/tools/"
+    "message": "\u79bb\u7ebf\u4e8c\u7ef4\u7801\u751f\u6210/\u7f16\u8f91\u5668\uff08\u7f51\u5740\u548c\u6587\u672c\uff09",
+    "description": "Extension description shown by Chrome"
+  },
+  "appTitle": {
+    "message": "\u79bb\u7ebf\u4e8c\u7ef4\u7801\u751f\u6210/\u7f16\u8f91\u5668\uff08\u7f51\u5740\u548c\u6587\u672c\uff09",
+    "description": "Toolbar title shown by Chrome"
   }
 }

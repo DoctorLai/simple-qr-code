@@ -1,0 +1,14 @@
+# Normalize line endings to LF on checkin for text files.
+* text=auto eol=lf
+
+# Keep third-party bundles out of GitHub language statistics.
+simple-qr-code/js/jquery.js linguist-vendored
+simple-qr-code/js/qrcode.min.js linguist-vendored
+
+# Binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
