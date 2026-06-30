@@ -1,14 +1,14 @@
 /**
  * Background service worker (Manifest V3).
  *
- * Re-creates the "Get QR for Selected Text or Tab URL" context-menu item and,
- * when it is clicked, asks the content script on the active tab to render a QR
- * code for the selected text (or the tab URL when nothing is selected).
+ * Re-creates the "Create QR Code from Selection or Tab URL" context-menu item and,
+ * when it is clicked, opens the extension popup with the selected text (or the
+ * tab URL when nothing is selected).
  */
 importScripts("lib/qrutils.js");
 
 var MENU_ID = "justyyuk-offline-qr-code";
-var MENU_TITLE = "Get QR for Selected Text or Tab URL";
+var MENU_TITLE = "Create QR Code from Selection or Tab URL";
 
 function buildContextMenu() {
   chrome.contextMenus.removeAll(function () {
@@ -28,15 +28,38 @@ function buildContextMenu() {
 chrome.runtime.onInstalled.addListener(buildContextMenu);
 chrome.runtime.onStartup.addListener(buildContextMenu);
 
+// Rebuild when the user toggles the "hide context menu" option.
+chrome.storage.onChanged.addListener(function (changes, area) {
+  if (area === "sync" && changes.hidemenu) {
+    buildContextMenu();
+  }
+});
+
+function openPopupWithText(text) {
+  chrome.storage.session.set({ pendingQrText: text }, function () {
+    if (!chrome.action || !chrome.action.openPopup) {
+      chrome.tabs.create({ url: chrome.runtime.getURL("main.html") });
+      return;
+    }
+    try {
+      var openResult = chrome.action.openPopup();
+      if (openResult && typeof openResult.catch === "function") {
+        openResult.catch(function () {
+          chrome.tabs.create({ url: chrome.runtime.getURL("main.html") });
+        });
+      }
+    } catch {
+      chrome.tabs.create({ url: chrome.runtime.getURL("main.html") });
+    }
+  });
+}
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId !== MENU_ID) {
     return;
   }
   var txt = self.QRUtils.pickQrText(info, tab);
-  if (txt && txt.length > 0 && tab && tab.id != null) {
-    chrome.tabs.sendMessage(tab.id, {
-      type: "weibomiaopaiopenqrmodal",
-      text: txt,
-    });
+  if (txt && txt.length > 0) {
+    openPopupWithText(txt);
   }
 });

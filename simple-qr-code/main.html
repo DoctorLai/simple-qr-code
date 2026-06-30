@@ -2,17 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Simple QR Code Offline</title>
-    <meta name="author" content="https://weibomiaopai.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline QR Code Generator/Editor</title>
     <style>
       :root {
-        color-scheme: light;
+        color-scheme: light dark;
+        --bg: #ffffff;
         --accent: #1769aa;
         --accent-hover: #0f548c;
         --border: #d8dee6;
         --muted: #617084;
         --panel: #f7f9fc;
         --text: #1c2430;
+        --secondary-bg: #eef3f8;
+        --secondary-hover: #e2ebf4;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0f141a;
+          --accent: #4c9be8;
+          --accent-hover: #5fa8ef;
+          --border: #2c3845;
+          --muted: #9aa7b4;
+          --panel: #ffffff;
+          --text: #e6edf3;
+          --secondary-bg: #243140;
+          --secondary-hover: #2c3b4d;
+        }
+      }
+
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0f141a;
+        --accent: #4c9be8;
+        --accent-hover: #5fa8ef;
+        --border: #2c3845;
+        --muted: #9aa7b4;
+        --panel: #ffffff;
+        --text: #e6edf3;
+        --secondary-bg: #243140;
+        --secondary-hover: #2c3b4d;
+      }
+
+      :root[data-theme="light"] {
+        color-scheme: light;
       }
 
       body {
@@ -23,7 +57,7 @@
         color: var(--text);
         font-family:
           ui-sans-serif, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background: #fff;
+        background: var(--bg);
       }
 
       #output {
@@ -87,7 +121,7 @@
 
       .actions {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 8px;
       }
 
@@ -109,12 +143,55 @@
 
       button.secondary {
         color: var(--text);
-        background: #eef3f8;
+        background: var(--secondary-bg);
         border: 1px solid var(--border);
       }
 
       button.secondary:hover {
-        background: #e2ebf4;
+        background: var(--secondary-hover);
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+
+      .iconlink {
+        min-height: 0;
+        padding: 0;
+        color: var(--muted);
+        background: none;
+        border: 0;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .iconlink:hover {
+        color: var(--accent);
+        background: none;
+      }
+
+      .coffee {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        color: #1c2430;
+        background: #ffdd00;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .coffee:hover {
+        filter: brightness(0.96);
       }
     </style>
     <script src="js/jquery.js"></script>
@@ -128,11 +205,22 @@
     <textarea id="qr-text" spellcheck="false"></textarea>
     <div id="qrcode"></div>
     <div class="actions">
-      <button id="generate" type="button">Update QR</button>
-      <button id="download" type="button">Download PNG</button>
-      <button id="copy-text" class="secondary" type="button">Copy text</button>
+      <button id="download" type="button">Download</button>
+      <button id="copy-text" class="secondary" type="button">Copy</button>
       <button id="reset" class="secondary" type="button">Reset URL</button>
     </div>
     <div id="output2"></div>
+    <footer class="footer">
+      <button id="open-options" class="iconlink" type="button">
+        ⚙ Settings
+      </button>
+      <a
+        class="coffee"
+        href="https://buymeacoffee.com/y0btg5r"
+        target="_blank"
+        rel="noopener noreferrer"
+        >☕ Buy me a coffee</a
+      >
+    </footer>
   </body>
 </html>

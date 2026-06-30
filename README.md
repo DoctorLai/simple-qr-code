@@ -11,21 +11,25 @@
 [![License: MIT](https://img.shields.io/github/license/doctorlai/simple-qr-code?color=blue)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Last commit](https://img.shields.io/github/last-commit/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
+[![Issues](https://img.shields.io/github/issues/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/issues)
+[![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
 
-| Popup                               | On-page editor                    |
-| ----------------------------------- | --------------------------------- |
-| ![Popup screenshot](screenshot.jpg) | ![Editor screenshot](screen2.jpg) |
+![Popup screenshot](screenshot.jpg)
 
 ## Features
 
 - **100% offline & fast** - QR codes are generated locally with [`qrcode.js`](https://github.com/davidshimjs/qrcodejs); no network requests, ever.
 - **One click** - open the popup to instantly get a QR code for the current tab URL.
-- **Context-menu support** - select any text on a page, right-click, and choose _"Get QR for Selected Text or Tab URL"_.
-- **Inline editing** - edit QR text directly in the popup or on-page overlay without modal prompts.
-- **Download as PNG** - save generated QR images from the popup or the on-page overlay.
+- **Context-menu support** - select any text on a page, right-click, and choose _"Create QR Code from Selection or Tab URL"_ to open the popup pre-filled with that text.
+- **Inline editing** - edit QR text directly in the popup without modal prompts.
+- **Download as PNG** - save generated QR images from the popup.
 - **Copy QR text** - copy the current popup text back to your clipboard.
+- **Keyboard shortcut** - press `Alt+Shift+Q` to open the popup without reaching for the mouse (re-bind it at `chrome://extensions/shortcuts`).
+- **Custom QR colors** - pick any foreground and background color from the options page, with a live preview.
+- **Light, dark & auto themes** - choose a theme in the options, or let it follow your system automatically.
 - **Clean, ads-free UI** - no author links, no tracking, no nonsense.
-- **Multi-language** - 25 Chrome locale folders, including English, Chinese, Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, and Vietnamese.
+- **Localized store listing** - the extension name and description ship in 25 Chrome locales, including English, Chinese, Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, and Vietnamese.
 
 ## Install
 
@@ -42,20 +46,28 @@
 
 ## Usage
 
-- **Tab URL to QR:** click the toolbar icon. The popup shows a QR code for the current page; edit the text, update the QR, copy the text, reset to the tab URL, or download the PNG.
-- **Selected text to QR:** highlight text on any page, right-click, and choose _"Get QR for Selected Text or Tab URL"_. A draggable QR editor appears on the page with update, download, and close controls.
-- **Hide the context menu:** open the extension **Options** and tick _"Hide Context Menu"_.
+- **Tab URL to QR:** click the toolbar icon. The popup shows a QR code for the current page and updates live as you edit the text. Copy the text, reset to the tab URL, or download the PNG.
+- **Selected text to QR:** highlight text on any page, right-click, and choose _"Create QR Code from Selection or Tab URL"_. The popup opens pre-filled with the selected text; if nothing is selected, it uses the current tab URL.
+- **Customize colors & theme:** open the extension **Options** to set the QR foreground/background colors and choose an Auto / Light / Dark theme.
+- **Keyboard shortcut:** press `Alt+Shift+Q` (configurable at `chrome://extensions/shortcuts`) to open the popup for the current tab.
+- **Hide the context menu:** open the extension **Options** and tick _"Hide context menu"_.
 
 ## Permissions
 
 This extension asks for the minimum it needs and collects **no data**:
 
-| Permission                    | Why it is needed                                                    |
-| ----------------------------- | ------------------------------------------------------------------- |
-| `activeTab`                   | Read the current tab's URL when you open the popup or context menu. |
-| `storage`                     | Remember whether you have hidden the context menu.                  |
-| `contextMenus`                | Add the right-click _"Get QR"_ menu item.                           |
-| `<all_urls>` (content script) | Render the QR overlay on the page you are viewing.                  |
+| Permission     | Why it is needed                                                    |
+| -------------- | ------------------------------------------------------------------- |
+| `activeTab`    | Read the current tab's URL when you open the popup or context menu. |
+| `storage`      | Save your preferences (theme, QR colors, context-menu visibility).  |
+| `contextMenus` | Add the right-click _"Create QR Code"_ menu item.                   |
+
+## Privacy
+
+This extension is fully offline and collects **no data** - no network requests,
+no analytics, no tracking, no ads. The only things it stores are your own
+preferences (theme, QR colors, and context-menu visibility). See the full
+[Privacy Policy](PRIVACY.md) for details.
 
 ## Development
 
@@ -88,7 +100,6 @@ simple-qr-code/        # the unpacked extension (manifest.json at its root)
   js/
     context.js         # MV3 background service worker (context menu)
     qr.js              # popup editor, Copy Text, Download PNG
-    contentscript.js   # on-page draggable QR editor
     lib/qrutils.js     # pure, unit-tested helpers
   _locales/            # i18n message catalogs
   images/              # icons
@@ -105,7 +116,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and ru
 
 If this extension is useful to you, consider buying the author a coffee:
 
-- [Buy me a coffee](https://justyy.com/out/bmc)
+- [Buy me a coffee](https://buymeacoffee.com/y0btg5r)
 - [PayPal](https://www.paypal.me/doctorlai/3)
 - [GitHub Sponsors / Patreon](https://github.com/doctorlai)
 

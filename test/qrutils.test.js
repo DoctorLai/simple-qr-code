@@ -3,6 +3,9 @@
 const {
   pickQrText,
   sanitizeFilename,
+  normalizeHexColor,
+  normalizeTheme,
+  DEFAULTS,
 } = require("../simple-qr-code/js/lib/qrutils");
 
 describe("pickQrText", () => {
@@ -59,5 +62,62 @@ describe("sanitizeFilename", () => {
   test("truncates very long input to 64 characters", () => {
     const out = sanitizeFilename("a".repeat(200));
     expect(out).toBe("a".repeat(64) + ".png");
+  });
+});
+
+describe("normalizeHexColor", () => {
+  test("accepts and lowercases a 6-digit hex", () => {
+    expect(normalizeHexColor("#1769AA")).toBe("#1769aa");
+    expect(normalizeHexColor("#abcdef")).toBe("#abcdef");
+  });
+
+  test("expands 3-digit shorthand to 6 digits", () => {
+    expect(normalizeHexColor("#f0a")).toBe("#ff00aa");
+    expect(normalizeHexColor("#FFF")).toBe("#ffffff");
+  });
+
+  test("trims surrounding whitespace", () => {
+    expect(normalizeHexColor("  #000000  ")).toBe("#000000");
+  });
+
+  test("falls back when the value is not a valid hex color", () => {
+    expect(normalizeHexColor("rgb(0,0,0)", "#ffffff")).toBe("#ffffff");
+    expect(normalizeHexColor("#12345", "#abcdef")).toBe("#abcdef");
+    expect(normalizeHexColor("nonsense")).toBe("#000000");
+  });
+
+  test("falls back for non-string input", () => {
+    expect(normalizeHexColor(null, "#123456")).toBe("#123456");
+    expect(normalizeHexColor(undefined)).toBe("#000000");
+    expect(normalizeHexColor(42)).toBe("#000000");
+  });
+
+  test("ignores an invalid fallback and uses black", () => {
+    expect(normalizeHexColor("bad", "also-bad")).toBe("#000000");
+  });
+});
+
+describe("normalizeTheme", () => {
+  test("passes through supported themes", () => {
+    expect(normalizeTheme("light")).toBe("light");
+    expect(normalizeTheme("dark")).toBe("dark");
+    expect(normalizeTheme("auto")).toBe("auto");
+  });
+
+  test("defaults unknown values to auto", () => {
+    expect(normalizeTheme("solarized")).toBe("auto");
+    expect(normalizeTheme("")).toBe("auto");
+    expect(normalizeTheme(undefined)).toBe("auto");
+    expect(normalizeTheme(null)).toBe("auto");
+  });
+});
+
+describe("DEFAULTS", () => {
+  test("exposes the default settings", () => {
+    expect(DEFAULTS).toEqual({
+      theme: "auto",
+      qrColorDark: "#000000",
+      qrColorLight: "#ffffff",
+    });
   });
 });
