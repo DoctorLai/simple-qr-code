@@ -121,7 +121,7 @@
 
       .actions {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 8px;
       }
 
@@ -205,9 +205,8 @@
     <textarea id="qr-text" spellcheck="false"></textarea>
     <div id="qrcode"></div>
     <div class="actions">
-      <button id="generate" type="button">Update QR</button>
-      <button id="download" type="button">Download PNG</button>
-      <button id="copy-text" class="secondary" type="button">Copy text</button>
+      <button id="download" type="button">Download</button>
+      <button id="copy-text" class="secondary" type="button">Copy</button>
       <button id="reset" class="secondary" type="button">Reset URL</button>
     </div>
     <div id="output2"></div>

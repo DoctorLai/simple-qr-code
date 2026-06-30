@@ -21,11 +21,15 @@ processes the following **only on your device** and **only when you ask it to**:
   right-click context-menu item, so it can generate a QR code for the current
   page.
 - **Text you select** — read when you highlight text on a page and choose
-  _"Get QR for Selected Text or Tab URL"_, so it can generate a QR code for that
-  text.
+  _"Create QR Code from Selection or Tab URL"_, so it can generate a QR code for
+  that text.
 
 This information is used immediately to render a QR image and is **never sent
 anywhere**. It is not logged, not retained, and not transmitted off your device.
+When you use the context menu, the selected text or tab URL is held briefly in
+Chrome extension session storage so the popup can open pre-filled, then it is
+cleared immediately. This session value is not synced and does not survive a
+browser restart.
 
 ## What data the extension stores
 
@@ -65,12 +69,11 @@ All QR generation happens locally using the bundled
 
 ## Permissions
 
-| Permission                    | Why it is needed                                                    |
-| ----------------------------- | ------------------------------------------------------------------- |
-| `activeTab`                   | Read the current tab's URL when you open the popup or context menu. |
-| `storage`                     | Save the preferences described above (theme, QR colors, menu).      |
-| `contextMenus`                | Add the right-click _"Get QR"_ menu item.                           |
-| `<all_urls>` (content script) | Render the QR overlay on the page you are currently viewing.        |
+| Permission     | Why it is needed                                                    |
+| -------------- | ------------------------------------------------------------------- |
+| `activeTab`    | Read the current tab's URL when you open the popup or context menu. |
+| `storage`      | Save the preferences described above (theme, QR colors, menu).      |
+| `contextMenus` | Add the right-click _"Create QR Code"_ menu item.                   |
 
 The extension requests the minimum permissions required for these features and
 uses them for no other purpose.

@@ -35,18 +35,5 @@
   "permissions": ["activeTab", "storage", "contextMenus"],
   "background": {
     "service_worker": "js/context.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": [
-        "js/jquery.js",
-        "js/qrcode.min.js",
-        "js/toutf8.js",
-        "js/lib/qrutils.js",
-        "js/contentscript.js"
-      ],
-      "run_at": "document_start"
-    }
-  ]
+  }
 }
