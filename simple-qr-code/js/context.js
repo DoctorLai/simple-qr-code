@@ -28,6 +28,13 @@ function buildContextMenu() {
 chrome.runtime.onInstalled.addListener(buildContextMenu);
 chrome.runtime.onStartup.addListener(buildContextMenu);
 
+// Rebuild when the user toggles the "hide context menu" option.
+chrome.storage.onChanged.addListener(function (changes, area) {
+  if (area === "sync" && changes.hidemenu) {
+    buildContextMenu();
+  }
+});
+
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId !== MENU_ID) {
     return;

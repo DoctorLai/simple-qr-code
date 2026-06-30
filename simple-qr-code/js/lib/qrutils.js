@@ -63,8 +63,64 @@
     return base + ".png";
   }
 
+  /** Default user-configurable settings. */
+  var DEFAULTS = {
+    theme: "auto",
+    qrColorDark: "#000000",
+    qrColorLight: "#ffffff",
+  };
+
+  /**
+   * Validate and normalize a CSS hex color into lowercase "#rrggbb" form.
+   * Accepts "#rgb" shorthand (expanded) and is case-insensitive. Anything
+   * invalid returns the provided fallback (or black).
+   *
+   * @param {unknown} value      the candidate color
+   * @param {string} [fallback]  value to use when `value` is not a valid hex
+   * @returns {string} a normalized "#rrggbb" color
+   */
+  function normalizeHexColor(value, fallback) {
+    var fb =
+      typeof fallback === "string" && /^#[0-9a-f]{6}$/i.test(fallback)
+        ? fallback.toLowerCase()
+        : "#000000";
+    if (typeof value !== "string") {
+      return fb;
+    }
+    var v = value.trim();
+    var short = /^#([0-9a-f])([0-9a-f])([0-9a-f])$/i.exec(v);
+    if (short) {
+      return (
+        "#" +
+        short[1] +
+        short[1] +
+        short[2] +
+        short[2] +
+        short[3] +
+        short[3]
+      ).toLowerCase();
+    }
+    if (/^#[0-9a-f]{6}$/i.test(v)) {
+      return v.toLowerCase();
+    }
+    return fb;
+  }
+
+  /**
+   * Normalize a theme preference to one of the supported values.
+   *
+   * @param {unknown} value  the candidate theme
+   * @returns {"auto"|"light"|"dark"} a supported theme (defaults to "auto")
+   */
+  function normalizeTheme(value) {
+    return value === "light" || value === "dark" ? value : "auto";
+  }
+
   return {
     pickQrText: pickQrText,
     sanitizeFilename: sanitizeFilename,
+    normalizeHexColor: normalizeHexColor,
+    normalizeTheme: normalizeTheme,
+    DEFAULTS: DEFAULTS,
   };
 });

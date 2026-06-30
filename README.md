@@ -11,6 +11,9 @@
 [![License: MIT](https://img.shields.io/github/license/doctorlai/simple-qr-code?color=blue)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Last commit](https://img.shields.io/github/last-commit/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
+[![Issues](https://img.shields.io/github/issues/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/issues)
+[![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
 
 | Popup                               | On-page editor                    |
 | ----------------------------------- | --------------------------------- |
@@ -24,8 +27,11 @@
 - **Inline editing** - edit QR text directly in the popup or on-page overlay without modal prompts.
 - **Download as PNG** - save generated QR images from the popup or the on-page overlay.
 - **Copy QR text** - copy the current popup text back to your clipboard.
+- **Keyboard shortcut** - press `Alt+Shift+Q` to open the popup without reaching for the mouse (re-bind it at `chrome://extensions/shortcuts`).
+- **Custom QR colors** - pick any foreground and background color from the options page, with a live preview.
+- **Light, dark & auto themes** - choose a theme in the options, or let it follow your system automatically, while the QR itself stays high-contrast for reliable scanning.
 - **Clean, ads-free UI** - no author links, no tracking, no nonsense.
-- **Multi-language** - 25 Chrome locale folders, including English, Chinese, Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, and Vietnamese.
+- **Localized store listing** - the extension name and description ship in 25 Chrome locales, including English, Chinese, Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, and Vietnamese.
 
 ## Install
 
@@ -42,9 +48,11 @@
 
 ## Usage
 
-- **Tab URL to QR:** click the toolbar icon. The popup shows a QR code for the current page; edit the text, update the QR, copy the text, reset to the tab URL, or download the PNG.
-- **Selected text to QR:** highlight text on any page, right-click, and choose _"Get QR for Selected Text or Tab URL"_. A draggable QR editor appears on the page with update, download, and close controls.
-- **Hide the context menu:** open the extension **Options** and tick _"Hide Context Menu"_.
+- **Tab URL to QR:** click the toolbar icon. The popup shows a QR code for the current page and updates live as you edit the text. Copy the text, reset to the tab URL, or download the PNG.
+- **Selected text to QR:** highlight text on any page, right-click, and choose _"Get QR for Selected Text or Tab URL"_. A draggable editor appears on the page where you can edit the text, copy it, or download the PNG.
+- **Customize colors & theme:** open the extension **Options** to set the QR foreground/background colors and choose an Auto / Light / Dark theme.
+- **Keyboard shortcut:** press `Alt+Shift+Q` (configurable at `chrome://extensions/shortcuts`) to open the popup for the current tab.
+- **Hide the context menu:** open the extension **Options** and tick _"Hide context menu"_.
 
 ## Permissions
 
@@ -53,9 +61,16 @@ This extension asks for the minimum it needs and collects **no data**:
 | Permission                    | Why it is needed                                                    |
 | ----------------------------- | ------------------------------------------------------------------- |
 | `activeTab`                   | Read the current tab's URL when you open the popup or context menu. |
-| `storage`                     | Remember whether you have hidden the context menu.                  |
+| `storage`                     | Save your preferences (theme, QR colors, context-menu visibility).  |
 | `contextMenus`                | Add the right-click _"Get QR"_ menu item.                           |
 | `<all_urls>` (content script) | Render the QR overlay on the page you are viewing.                  |
+
+## Privacy
+
+This extension is fully offline and collects **no data** - no network requests,
+no analytics, no tracking, no ads. The only things it stores are your own
+preferences (theme, QR colors, and context-menu visibility). See the full
+[Privacy Policy](PRIVACY.md) for details.
 
 ## Development
 
@@ -105,7 +120,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and ru
 
 If this extension is useful to you, consider buying the author a coffee:
 
-- [Buy me a coffee](https://justyy.com/out/bmc)
+- [Buy me a coffee](https://buymeacoffee.com/y0btg5r)
 - [PayPal](https://www.paypal.me/doctorlai/3)
 - [GitHub Sponsors / Patreon](https://github.com/doctorlai)
 

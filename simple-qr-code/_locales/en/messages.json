@@ -14,5 +14,9 @@
   "appTitle": {
     "message": "Offline QR Code Generator/Editor (URL and Text)",
     "description": "Toolbar title shown by Chrome"
+  },
+  "cmdOpenPopup": {
+    "message": "Open the QR code popup",
+    "description": "Description of the keyboard shortcut that opens the popup"
   }
 }

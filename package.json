@@ -1,6 +1,6 @@
 {
   "name": "simple-qr-code",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "private": true,
   "description": "Offline QR Code Generator/Editor - a fast, ads-free, fully offline Chrome extension (Manifest V3) that turns the current tab URL or any selected text into a QR code.",
   "author": "justyy <dr.zhihua.lai@gmail.com>",

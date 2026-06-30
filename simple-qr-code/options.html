@@ -1,30 +1,296 @@
 <!doctype html>
-<html lang="en-us">
-  <meta charset="utf-8" />
-  <meta name="author" content="https://weibomiaopai.com" />
+<html lang="en">
   <head>
-    <title>Simple QR Code Offline No Ads or Author Link</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline QR Code Generator/Editor — Options</title>
     <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --border: #d8dee6;
+        --text: #1c2430;
+        --muted: #617084;
+        --accent: #1769aa;
+        --accent-hover: #0f548c;
+        --panel: #f7f9fc;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0f141a;
+          --card: #1b232d;
+          --border: #2c3845;
+          --text: #e6edf3;
+          --muted: #9aa7b4;
+          --accent: #4c9be8;
+          --accent-hover: #5fa8ef;
+          --panel: #11181f;
+        }
+      }
+
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0f141a;
+        --card: #1b232d;
+        --border: #2c3845;
+        --text: #e6edf3;
+        --muted: #9aa7b4;
+        --accent: #4c9be8;
+        --accent-hover: #5fa8ef;
+        --panel: #11181f;
+      }
+
+      :root[data-theme="light"] {
+        color-scheme: light;
+      }
+
       body {
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 100vh;
+        align-items: flex-start;
+        min-height: 100vh;
         margin: 0;
-        background-color: #f6f6f6;
+        padding: 32px 24px;
+        box-sizing: border-box;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          ui-sans-serif, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
-      label {
-        font-size: 16px;
+      .card {
+        width: 100%;
+        max-width: 460px;
+        padding: 24px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       }
 
-      input {
-        vertical-align: 2px;
+      h1 {
+        margin: 0 0 18px;
+        font-size: 19px;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+
+      section {
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      section:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+
+      .segmented label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .segmented input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .segmented label:has(input:checked) {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .color-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+
+      .color-row input[type="color"] {
+        width: 48px;
+        height: 32px;
+        padding: 0;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: none;
+        cursor: pointer;
+      }
+
+      .preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 4px 0 12px;
+        padding: 16px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .preview img,
+      .preview canvas {
+        width: 180px;
+        height: 180px;
+      }
+
+      label.toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      label.toggle input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--accent);
+        cursor: pointer;
+      }
+
+      .hint {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      button.link {
+        padding: 0;
+        font: inherit;
+        color: var(--accent);
+        background: none;
+        border: 0;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 4px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .coffee {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 12px;
+        color: #1c2430;
+        background: #ffdd00;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .coffee:hover {
+        filter: brightness(0.96);
+      }
+
+      #status {
+        min-height: 16px;
+        color: var(--accent);
+        font-size: 12px;
       }
     </style>
   </head>
   <body>
-    <label> <input type="checkbox" />Hide Context Menu </label>
+    <main class="card">
+      <h1>Offline QR Code — Options</h1>
+
+      <section>
+        <h2>Theme</h2>
+        <div class="segmented" id="theme-group">
+          <label><input type="radio" name="theme" value="auto" />Auto</label>
+          <label><input type="radio" name="theme" value="light" />Light</label>
+          <label><input type="radio" name="theme" value="dark" />Dark</label>
+        </div>
+        <p class="hint">
+          “Auto” follows your operating system’s light/dark setting.
+        </p>
+      </section>
+
+      <section>
+        <h2>QR code colors</h2>
+        <div class="preview" id="preview" aria-hidden="true"></div>
+        <div class="color-row">
+          <label for="color-dark">Foreground (dots)</label>
+          <input type="color" id="color-dark" value="#000000" />
+        </div>
+        <div class="color-row">
+          <label for="color-light">Background</label>
+          <input type="color" id="color-light" value="#ffffff" />
+        </div>
+        <button type="button" class="link" id="reset-colors">
+          Reset to black on white
+        </button>
+        <p class="hint">
+          Keep a strong contrast between the two colors so the code stays easy
+          to scan.
+        </p>
+      </section>
+
+      <section>
+        <h2>Context menu</h2>
+        <label class="toggle">
+          <input type="checkbox" id="hide-menu" />
+          Hide the right-click “Get QR for Selected Text or Tab URL” item
+        </label>
+        <p class="hint">
+          You can still open the popup from the toolbar icon or with
+          <strong>Alt+Shift+Q</strong>.
+        </p>
+      </section>
+
+      <div id="status" role="status" aria-live="polite"></div>
+
+      <footer>
+        <span id="version"></span>
+        <a
+          class="coffee"
+          href="https://buymeacoffee.com/y0btg5r"
+          target="_blank"
+          rel="noopener noreferrer"
+          >☕ Buy me a coffee</a
+        >
+      </footer>
+    </main>
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/lib/qrutils.js"></script>
     <script src="js/options.js"></script>
   </body>
 </html>
