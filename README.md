@@ -16,6 +16,9 @@
 [![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
 
 ![Popup screenshot](screenshot.jpg)
+<img width="457" height="850" alt="image" src="https://github.com/user-attachments/assets/750defca-7429-4eba-ad25-d54cfceb460f" />
+<img width="814" height="1226" alt="image" src="https://github.com/user-attachments/assets/44e4bc8f-ecaa-454e-8c8f-f69cf404b004" />
+
 
 ## Features
 
