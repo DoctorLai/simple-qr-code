@@ -19,7 +19,6 @@
 <img width="457" height="850" alt="image" src="https://github.com/user-attachments/assets/750defca-7429-4eba-ad25-d54cfceb460f" />
 <img width="814" height="1226" alt="image" src="https://github.com/user-attachments/assets/44e4bc8f-ecaa-454e-8c8f-f69cf404b004" />
 
-
 ## Features
 
 - **100% offline & fast** - QR codes are generated locally with [`qrcode.js`](https://github.com/davidshimjs/qrcodejs); no network requests, ever.
