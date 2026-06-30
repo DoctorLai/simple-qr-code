@@ -14,6 +14,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
 [![Issues](https://img.shields.io/github/issues/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/issues)
 [![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
+[![Privacy Policy](https://img.shields.io/badge/privacy-policy-0f766e)](PRIVACY.md)
 
 ![Popup screenshot](screenshot.jpg)
 <img width="457" height="850" alt="image" src="https://github.com/user-attachments/assets/750defca-7429-4eba-ad25-d54cfceb460f" />
