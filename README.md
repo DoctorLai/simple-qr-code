@@ -2,19 +2,41 @@
 
 > A fast, ads-free, **fully offline** Chrome extension that turns the current tab URL - or any selected text - into a QR code you can edit and download.
 
+<!-- Build & project -->
+
 [![CI](https://github.com/doctorlai/simple-qr-code/actions/workflows/ci.yml/badge.svg)](https://github.com/doctorlai/simple-qr-code/actions/workflows/ci.yml)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/doctorlai/simple-qr-code)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-43853d?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Manifest V3](https://img.shields.io/badge/manifest-v3-4285F4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
+
+<!-- Chrome Web Store -->
+
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kfhbhjigpkcbpmknfomdobahejfajado?logo=googlechrome&logoColor=white&label=web%20store)](https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado)
 [![Users](https://img.shields.io/chrome-web-store/users/kfhbhjigpkcbpmknfomdobahejfajado?label=users)](https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado)
 [![Rating](https://img.shields.io/chrome-web-store/rating/kfhbhjigpkcbpmknfomdobahejfajado?label=rating)](https://chrome.google.com/webstore/detail/simple-qr-code-offline-no/kfhbhjigpkcbpmknfomdobahejfajado)
+
+<!-- Repository -->
+
 [![License: MIT](https://img.shields.io/github/license/doctorlai/simple-qr-code?color=blue)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
+[![Forks](https://img.shields.io/github/forks/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/network/members)
+[![Watchers](https://img.shields.io/github/watchers/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/watchers)
+[![Open issues](https://img.shields.io/github/issues/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/issues)
+[![Open PRs](https://img.shields.io/github/issues-pr/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/pulls)
+
+<!-- Activity & code -->
+
+[![Last commit](https://img.shields.io/github/last-commit/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
+[![Repo size](https://img.shields.io/github/repo-size/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code)
+[![Top language](https://img.shields.io/github/languages/top/doctorlai/simple-qr-code?logo=javascript)](https://github.com/doctorlai/simple-qr-code)
+
+<!-- Contributing & policies -->
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Last commit](https://img.shields.io/github/last-commit/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/commits)
-[![Issues](https://img.shields.io/github/issues/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/issues)
-[![Stars](https://img.shields.io/github/stars/doctorlai/simple-qr-code?logo=github)](https://github.com/doctorlai/simple-qr-code/stargazers)
 [![Privacy Policy](https://img.shields.io/badge/privacy-policy-0f766e)](PRIVACY.md)
+[![Security Policy](https://img.shields.io/badge/security-policy-c0392b)](SECURITY.md)
 
 ![Popup screenshot](screenshot.jpg)
 <img width="457" height="850" alt="image" src="https://github.com/user-attachments/assets/750defca-7429-4eba-ad25-d54cfceb460f" />
@@ -32,7 +54,7 @@
 - **Custom QR colors** - pick any foreground and background color from the options page, with a live preview.
 - **Light, dark & auto themes** - choose a theme in the options, or let it follow your system automatically.
 - **Clean, ads-free UI** - no author links, no tracking, no nonsense.
-- **Localized store listing** - the extension name and description ship in 25 Chrome locales, including English, Chinese, Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, and Vietnamese.
+- **Localized store listing** - the extension name and description ship in 29 Chrome locales, including English, Chinese, Arabic, Bengali, German, Spanish, Persian, French, Gujarati, Hindi, Indonesian, Italian, Japanese, Korean, Marathi, Dutch, Polish, Portuguese, Russian, Tamil, Telugu, Thai, Turkish, Urdu, and Vietnamese.
 
 ## Install
 
@@ -71,6 +93,12 @@ This extension is fully offline and collects **no data** - no network requests,
 no analytics, no tracking, no ads. The only things it stores are your own
 preferences (theme, QR colors, and context-menu visibility). See the full
 [Privacy Policy](PRIVACY.md) for details.
+
+## Security
+
+Found a security issue? Please report it **privately** - see the
+[Security Policy](SECURITY.md) for how to disclose vulnerabilities responsibly.
+Do not open a public issue for anything security-sensitive.
 
 ## Development
 

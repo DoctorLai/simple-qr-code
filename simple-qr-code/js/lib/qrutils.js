@@ -11,6 +11,7 @@
 (function (root, factory) {
   "use strict";
   var api = factory();
+  /* istanbul ignore next: browser/service-worker global, not exercised under Node */
   if (typeof self !== "undefined" && self) {
     // Service worker / browser global scope.
     self.QRUtils = api;

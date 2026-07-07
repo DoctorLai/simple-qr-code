@@ -14,7 +14,7 @@ describe("extension locales", () => {
     .sort();
 
   test("includes broad locale coverage", () => {
-    expect(localeNames.length).toBeGreaterThanOrEqual(25);
+    expect(localeNames.length).toBeGreaterThanOrEqual(29);
   });
 
   test.each(localeNames)("%s includes manifest message keys", (localeName) => {
@@ -27,4 +27,23 @@ describe("extension locales", () => {
       expect(messages[key].message.trim().length).toBeGreaterThan(0);
     }
   });
+
+  test("every locale directory uses a valid Chrome locale code", () => {
+    for (const name of localeNames) {
+      expect(name).toMatch(/^[a-z]{2,3}(_[A-Za-z0-9]+)?$/);
+    }
+  });
+
+  test.each(localeNames)(
+    "%s has a non-empty string message for every key",
+    (localeName) => {
+      const messagesPath = path.join(localesDir, localeName, "messages.json");
+      const messages = JSON.parse(fs.readFileSync(messagesPath, "utf8"));
+
+      for (const key of Object.keys(messages)) {
+        expect(typeof messages[key].message).toBe("string");
+        expect(messages[key].message.trim().length).toBeGreaterThan(0);
+      }
+    }
+  );
 });

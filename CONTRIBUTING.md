@@ -63,5 +63,26 @@ test/                  # Jest unit tests
 - Keep [`simple-qr-code/js/lib/qrutils.js`](simple-qr-code/js/lib/qrutils.js)
   free of `chrome.*` and DOM access so it stays pure and testable.
 
+## Adding or updating a translation
+
+The store listing is localized through Chrome's i18n system under
+[`simple-qr-code/_locales/`](simple-qr-code/_locales). Each locale is a folder
+named with its Chrome locale code (for example `en`, `fr`, `zh_CN`) containing a
+single `messages.json`.
+
+To add a language:
+
+1. Create `simple-qr-code/_locales/<locale>/messages.json`.
+2. Provide at least the `appName`, `appShortName`, `appDesc`, and `appTitle`
+   messages (missing keys fall back to the `en` default locale).
+3. Keep the technical tokens `QR` and `URL` as-is; translate the words around
+   them.
+4. Run `npm run check` - the locale test suite validates every catalog.
+
+## Reporting security issues
+
+Please do not file public issues for security problems. Follow the
+[Security Policy](SECURITY.md) to disclose vulnerabilities privately.
+
 By contributing you agree that your contributions are licensed under the
 project's [MIT License](LICENSE).

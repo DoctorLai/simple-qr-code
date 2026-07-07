@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "سازنده/ویرایشگر کد QR آفلاین",
+    "description": "Offline QR Code Generator/Editor https://helloacm.com/tools/"
+  },
+  "appShortName": {
+    "message": "QR Code",
+    "description": "Short extension name shown by Chrome"
+  },
+  "appDesc": {
+    "message": "سازنده/ویرایشگر کد QR آفلاین (URL و متن)",
+    "description": "Extension description shown by Chrome"
+  },
+  "appTitle": {
+    "message": "سازنده/ویرایشگر کد QR آفلاین (URL و متن)",
+    "description": "Toolbar title shown by Chrome"
+  }
+}

@@ -35,6 +35,16 @@ describe("pickQrText", () => {
     expect(pickQrText({ selectionText: "" }, {})).toBe("");
     expect(pickQrText(undefined, undefined)).toBe("");
   });
+
+  test("ignores a non-string selection and falls back to the tab URL", () => {
+    expect(pickQrText({ selectionText: 123 }, { url: "https://x.dev" })).toBe(
+      "https://x.dev"
+    );
+  });
+
+  test("ignores a non-string tab URL", () => {
+    expect(pickQrText({}, { url: 42 })).toBe("");
+  });
 });
 
 describe("sanitizeFilename", () => {
@@ -57,6 +67,10 @@ describe("sanitizeFilename", () => {
     expect(sanitizeFilename("   ")).toBe("qrcode.png");
     expect(sanitizeFilename(null)).toBe("qrcode.png");
     expect(sanitizeFilename(undefined)).toBe("qrcode.png");
+  });
+
+  test("uses the default name when the fallback is also empty", () => {
+    expect(sanitizeFilename("", "")).toBe("qrcode.png");
   });
 
   test("truncates very long input to 64 characters", () => {
@@ -94,6 +108,10 @@ describe("normalizeHexColor", () => {
 
   test("ignores an invalid fallback and uses black", () => {
     expect(normalizeHexColor("bad", "also-bad")).toBe("#000000");
+  });
+
+  test("normalizes a valid uppercase fallback to lowercase", () => {
+    expect(normalizeHexColor("nope", "#ABCDEF")).toBe("#abcdef");
   });
 });
 
