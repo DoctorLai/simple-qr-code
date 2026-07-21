@@ -36,10 +36,10 @@
     "ci": "npm run check && npm run build"
   },
   "devDependencies": {
-    "archiver": "^7.0.1",
-    "eslint": "^9.39.4",
+    "archiver": "^8.0.0",
+    "eslint": "^10.7.0",
     "globals": "^17.7.0",
     "jest": "^30.4.2",
-    "prettier": "^3.9.3"
+    "prettier": "^3.9.6"
   }
 }
